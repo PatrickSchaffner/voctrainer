@@ -8,14 +8,14 @@ public class Word {
 	private final StringProperty a, b;
 
 	public Word() {
-		a = new SimpleStringProperty();
-		b = new SimpleStringProperty();
+		a = new SimpleStringProperty("");
+		b = new SimpleStringProperty("");
 	}
 
 	public Word(String a, String b) {
 		this();
-		this.a.set(a);
-		this.b.set(b);
+		setA(a);
+		setB(b);
 	}
 
 	public String getA() {

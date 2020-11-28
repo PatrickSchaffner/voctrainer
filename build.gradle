@@ -1,0 +1,35 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = '15'
+    modules = [ 'javafx.base', 'javafx.controls', 'javafx.graphics' ]
+}
+
+mainClassName = 'io.zauberberg.voctrainer.Launcher'
+
+dependencies {
+	testCompile "org.testfx:testfx-core:4.0.16-alpha"
+    testCompile "org.testfx:testfx-junit5:4.0.16-alpha"
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+distZip {
+    into(project.name) {
+        from '.'
+        include 'vocabulary/*'
+    }
+}
+
