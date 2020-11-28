@@ -13,7 +13,7 @@ import javafx.application.Platform;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Voctrainer extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
